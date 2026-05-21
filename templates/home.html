@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, intial-scale=1.0">
+    <title>Navigation bar</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    
+</head>
+<body>
+    <header>
+        
+
+    <a href="#" class="logo">
+        <i class="school"></i> Tutor Booking
+    </a>
+
+    <ul>
+        <li><a href="#"><i class="home"></i> Home</a>
+        </li>
+
+        <li><a href="#"><i class="user"></i> Tutor</a>
+        </li>
+
+        <li><a href="#"><i class="calendar"></i> My Booking</a>
+        </li>
+
+        <button type="button"><i class="login"></i> Login
+        </button>
+    </ul>
+
+
+    </header>
+<div class="row">
+    <div class="col-2">
+        <h1>Book Your<br>Online Tutoring<br>Session</h1>
+        <div class="search-btn">
+            <select>
+                <option>Choose Subject</option>
+                <option>Computer</option>
+                <option>Maths</option>
+                <option>English</option>
+                <option>Nepali</option>
+                <option>Science</option>
+            </select>
+
+            <select>
+                <option>Choose Time</option>
+                <option>8:00 AM</option>
+                <option>10:00 AM</option>
+                <option>12:00 PM</option>
+                <option>1:00 PM</option>
+            </select>
+
+            <a href="" class="btn">Search</a>
+        </div>
+        
+
+    </div>
+    <div class="col-2">
+        <img src="{{ url_for('static', filename='1 img.avif')}}">
+
+
+    </div>
+    
+
+</div>
+    <section class="how-it-works">
+        <h1>How It works</h1>
+
+    <div class="row1">
+        <div class="how-it-works-col">
+            <h3>1. Select Subject</h3>
+            <p>Pick the subject you want to choose and to study</p>
+    </div>
+    <div class="how-it-works-col">
+        <h3>2. Choose Tutor and Time</h3>
+        <p>Look at the availability of tutor and select the time as you want</p>
+    </div>
+    <div class="how-it-works-col">
+        <h3>3. Confirm Booking</h3>
+        <p>It shows in which time and date you have booked and confirmed the booking</p>
+    </div>
+    </section>
+</body>
+</html>
