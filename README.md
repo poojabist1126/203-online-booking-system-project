@@ -10,6 +10,7 @@ Built with Flask, HTML, and CSS.
   Features:
 - View available tutors
 - Book tutoring sessions
+- View subject and available time
 - Simple and user-friendly interface
 - Flask backend integration
 
