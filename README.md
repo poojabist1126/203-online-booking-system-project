@@ -1,35 +1,28 @@
-# Tutor Booking System
-
+Tutor Booking System
 A website where students can find a tutor and book a session.
 Built with Flask, HTML, and CSS.
 
-## Team
-- Pooja – tutor listing page and CSS styling
-- Shishir – Flask setup and home page
+Team
+Pooja : tutor listing page and CSS styling
+Shishir: Flask setup and home page
 
-## How to Run
+How to Run
 
 1. Install Flask:
-   ```
    pip install flask
-   ```
+   
 
 2. Go to the project folder:
-   ```
-   cd FINAL_OBS
-   ```
-
+    cd FINAL_OBS
+   
 3. Run the app:
-   ```
-   python app.py
-   ```
+    python app.py
+   
 
 4. Open your browser and go to:
-   ```
-   http://127.0.0.1:5000
-   ```
-
-## Tech Used
+    http://127.0.0.1:5000
+   
+Tech Used
 - Python / Flask
 - HTML / CSS
 - Jinja2
