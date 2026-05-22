@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Tutor Booking</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+
+  <body>
+    <header>
+      <a href="#" class="logo">
+        <i class="fa-solid fa-graduation-cap"></i>
+        Tutor Booking
+      </a>
+
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Tutor</a></li>
+        <li><a href="#">My Booking</a></li>
+
+        <li>
+          <button>Login</button>
+        </li>
+      </ul>
+    </header>
+
+    <section class="search-section">
+      <div class="search-box">
+        <input type="text" placeholder="Choose Subject..." />
+
+        <div class="bottom-box">
+          <input type="date" />
+
+          <select>
+            <option>All Times</option>
+            <option>Morning</option>
+            <option>Afternoon</option>
+            <option>Evening</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <section class="tutor-section">
+      {% for tutor in tutors %}
+      <div class="tutor-card">
+        <div class="left">
+          <img class="profile-pic" src="{{tutor.profile_pic}}" />
+
+          <div class="text">
+            <h3>{{tutor.name}}</h3>
+            <p>{{tutor.major}}</p>
+          </div>
+        </div>
+
+        <div class="right">
+          <h2>${{tutor.rate}}/hr</h2>
+          <button>Book Now</button>
+        </div>
+      </div>
+      {% endfor %}
+    </section>
+  </body>
+</html>
