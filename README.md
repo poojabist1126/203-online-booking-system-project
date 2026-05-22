@@ -1,10 +1,12 @@
-Tutor Booking System
+Name: Pooja Bist
+Student ID: 270585237
+
+Title : Online Tutor Booking System
 A website where students can find a tutor and book a session.
 Built with Flask, HTML, and CSS.
 
-Team
-Pooja : tutor listing page and CSS styling
-Shishir: Flask setup and home page
+
+
 
 How to Run
 
