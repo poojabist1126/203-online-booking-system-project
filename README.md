@@ -6,7 +6,12 @@ Title : Online Tutor Booking System
  A website where students can find a tutor and book a session.
                                                          
 Built with Flask, HTML, and CSS.
-
+ 
+  Features:
+- View available tutors
+- Book tutoring sessions
+- Simple and user-friendly interface
+- Flask backend integration
 
 
 
