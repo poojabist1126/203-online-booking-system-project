@@ -1,0 +1,21 @@
+Name: Shishir Kandel
+Student ID: 270633519
+
+
+Title: Online Tutor Booking System
+It is the web based platform which allows students to search and book the tutors according to the subject that we want. It is built with python, Flask, CSS, HTML
+Features:
+- We can browse and search the available tutors
+- We can book or cancel tutoring sessions.
+- We can look at our booking and if we want we can cancel it
+- In the tutors profile we can look at the subject and availability time 
+Technology that we are using:
+-Backend: Python, Flask
+-Frontend: HTML, CSS
+-Database: SQlite
+-Temlating: Jinja 2
+How too use it
+- Register as a student or tutor
+- Login to your account
+- Browse tutors by subject and available time
+- View the dashboard and edit and delete the booking
