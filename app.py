@@ -1,5 +1,5 @@
-import flask
-app = flask.Flask(__name__)
+from flask import Flask, render_template, request
+app = Flask(__name__)
 
 tutors = [
     {
@@ -62,8 +62,11 @@ tutors = [
 
 @app.route('/')
 def home():
-    return flask.render_template('index.html', tutors=tutors)
+    return render_template('index.html', tutors=tutors)
+
+@app.route('/booking/<int:tutor_id>')
+def booking(tutor_id):
+    return render_template('booking.html', tutor=tutors[tutor_id - 1])
 
 if __name__ == '__main__':
     app.run(debug=True)
-
