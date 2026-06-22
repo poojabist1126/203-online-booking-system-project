@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Tutor Booking</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+
+  <body>
+    <header>
+      <a href="#" class="logo">
+        <i class="fa-solid fa-graduation-cap"></i>
+        Tutor Booking
+      </a>
+
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Tutor</a></li>
+        <li><a href="#">My Booking</a></li>
+
+        <li>
+          <button>Login</button>
+        </li>
+      </ul>
+    </header>
+
+    <div class="booking-card">
+      <h2>Book Tutoring Session</h2>
+
+      <div class="tutor-info">
+        <img src="/{{ tutor.profile_pic }}" />
+        <div>
+          <h3>{{tutor.name}}</h3>
+          <p>Major: {{ tutor.major }}</p>
+          <p>Pay rate: ${{tutor.rate}}/hr</p>
+        </div>
+      </div>
+
+      <h4>Time:</h4>
+      <div class="time-grid">
+        <button>6:00 AM</button>
+        <button>12:00 PM</button>
+        <button>5:00 PM</button>
+        <button>6:00 PM</button>
+        <button>8:00 AM</button>
+        <button>1:00 PM</button>
+        <button>2:00 PM</button>
+        <button>8:00 PM</button>
+        <button>9:00 AM</button>
+        <button>3:00 PM</button>
+        <button>4:00 PM</button>
+        <button>9:00 PM</button>
+      </div>
+
+      <button class="confirm-btn">Confirm Booking</button>
+    </div>
+  </body>
+</html>

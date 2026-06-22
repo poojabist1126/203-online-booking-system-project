@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Tutor Booking</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+
+  <body>
+    <header>
+      <a href="#" class="logo">
+        <i class="fa-solid fa-graduation-cap"></i>
+        Tutor Booking
+      </a>
+
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Tutor</a></li>
+        <li><a href="#">My Booking</a></li>
+
+        <li>
+          <button>Login</button>
+        </li>
+      </ul>
+    </header>
+
+    <section class="search-section">
+      <div class="search-box">
+        <form>
+          <input type="text" name="subject" placeholder="Choose Subject..." />
+        </form>
+
+        <div class="bottom-box">
+          <input type="date" />
+
+          <select>
+            <option>All Times</option>
+            <option>Morning</option>
+            <option>Afternoon</option>
+            <option>Evening</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <section class="tutor-section">
+      {% for tutor in tutors %}
+      <div class="tutor-card">
+        <div class="left">
+          <img class="profile-pic" src="{{tutor.profile_pic}}" />
+
+          <div class="text">
+            <h3>{{tutor.name}}</h3>
+            <p>{{tutor.major}}</p>
+          </div>
+        </div>
+
+        <div class="right">
+          <h2>${{tutor.rate}}/hr</h2>
+          <a href="/booking/{{ tutor.id }}"><button>Book Now</button></a>
+        </div>
+      </div>
+      {% endfor %}
+    </section>
+  </body>
+  <footer class="footer">
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3>Tutor Booking</h3>
+            <p>Find the best tutors and book your sessions easily.</p>
+           
+        </div>
+ 
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/T">Tutors</a></li>
+                <li><a href="/c">My Bookings</a></li>
+            </ul>
+        </div>
+ 
+        <div class="footer-section">
+            <h3>Contact Us</h3>
+            <p>Email: yoobee123@gmail.com</p>
+            <p>Phone: +64 023842632</p>
+            <p>Address: 123 Tutor Street, Auckland, New Zealand</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+            <p> &copy; 2026 Tutor Booking. All rights reserved.</p>
+        </div>
+</footer>
+</html>
