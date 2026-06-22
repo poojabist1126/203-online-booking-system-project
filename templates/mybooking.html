@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+  <head>
+   
+    <title>Tutor Booking</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+ 
+  <body>
+    <header>
+      <a href="/home" class="logo">Tutor Booking</a>
+ 
+      <ul>
+        <li><a href="/home">Home</a></li>
+        <li><a href="/tutor">Tutor</a></li>
+        {% if session.get('role') == 'tutor' %}<li><a href="/tutor-dashboard">My Bookings</a></li>{% else %}<li><a href="/tutor">My Booking</a></li>{% endif %}
+        {% if session.get('user') %}
+            <li><a href="/logout"><button type="button">Logout</button></a></li>
+        {% else %}
+            <li><a href="/login-student"><button type="button">Login</button></a></li>
+        {% endif %}
+        
+      </ul>
+    </header>
+ 
+    <div class="booking-card">
+      <h2>Book Tutoring Session</h2>
+ 
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          <ul class="form-errors">
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      {% endwith %}
+ 
+      <div class="tutor-row">
+        <img src="/{{ tutor.profile_pic }}" alt="{{ tutor.name }}" />
+       
+       
+        <div>
+
+          <h3>{{ tutor.name }}</h3>
+          <p>Major: {{ tutor.major}}</p>
+          <p>Pay rate: ${{tutor.rate}}</p>
+       
+       
+        </div>
+      </div>
+     
+     
+     
+      <h4>Time:</h4>
+      <div class="time-grid">
+        <button>6:00 AM</button>
+        <button>12:00 PM</button>
+        <button>5:00 PM</button>
+        <button>6:00 PM</button>
+        <button>8:00 AM</button>
+        <button>1:00 PM</button>
+        <button>2:00 PM</button>
+        <button>8:00 PM</button>
+        <button>9:00 AM</button>
+        <button>3:00 PM</button>
+        <button>4:00 PM</button>
+        <button>9:00 PM</button>
+      </div>
+ 
+      <h4>Your Details:</h4>
+      <form method="POST" action="/booking/{{ tutor.id }}">
+  {{ form.hidden_tag() }}
+
+  <div class="form-group">
+    {{ form.name.label }}
+    {{ form.name(class="form-control") }}
+    {% for message in form.name.errors %}
+      <div class="field-error">{{ message }}</div>
+    {% endfor %}
+  </div>
+
+  <div class="form-group">
+    {{ form.Age.label }}
+    {{ form.Age(class="form-control") }}
+  </div>
+
+  <div class="form-group">
+    {{ form.email.label }}
+    {{ form.email(class="form-control") }}
+    {% for message in form.email.errors %}
+      <div class="field-error">{{ message }}</div>
+    {% endfor %}
+  </div>
+
+  <div class="form-group">
+    {{ form.Address.label }}
+    {{ form.Address(class="form-control", rows="3") }}
+  </div>
+
+  <div class="form-group">
+    {{ form.Gender.label }}
+    <div class="gender-row">
+      {% for subfield in form.Gender %}
+        <label class="radio-label">{{ subfield }} {{ subfield.label.text }}</label>
+      {% endfor %}
+    </div>
+  </div>
+
+  {{ form.submit(class="confirm-btn") }}
+</form>
+      
+    </div>
+  </body>
+  <footer class="footer">
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3>Tutor Booking</h3>
+            <p>Find the best tutors and book your sessions easily.</p>
+           
+        </div>
+ 
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/tutor">Tutors</a></li>
+                <li><a href="/mybooking">My Bookings</a></li>
+            </ul>
+        </div>
+ 
+        <div class="footer-section">
+            <h3>Contact Us</h3>
+            <p>Email: yoobee123@gmail.com</p>
+            <p>Phone: +64 023842632</p>
+            <p>Address: 123 Tutor Street, Auckland, New Zealand</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+            <p> &copy; 2026 Tutor Booking. All rights reserved.</p>
+        </div>
+</footer>
+</html> 

@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Booking Confirmed</title>
+    <link rel="stylesheet"href="{{ url_for('static', filename='style.css') }}"/>
+  </head>
+ 
+  <body>
+    <header>
+      <a href="/home" class="logo">Tutor Booking</a>
+ 
+      <ul>
+        <li><a href="/home">Home</a></li>
+        <li><a href="/tutor">Tutor</a></li>
+        {% if session.get('role') == 'tutor' %}<li><a href="/tutor-dashboard">My Bookings</a></li>{% else %}<li><a href="/tutor">My Booking</a></li>{% endif %}
+        {% if session.get('user') %}
+            <li><a href="/logout"><button type="button">Logout</button></a></li>
+        {% else %}
+            <li><a href="/login-student"><button type="button">Login</button></a></li>
+        {% endif %}
+      </ul>
+    </header>
+ 
+    <div class="confirm-card">
+      <h2>Booking Confirmed!</h2>
+      <P>Your session has been booked successfully.</P>
+
+      <h3>Tutor Info</h3>
+      <img src="/{{ tutor.profile_pic }}" alt="tutor photo" width="80">
+      <p><b>Name:</b> {{ tutor.name }}</p>
+      <p><b>Subject:</b> {{ tutor.major }}</p>
+      <p><b>Rate:</b> ${{ tutor.rate }} per hour</p>
+
+      <h3>Your Details</h3>
+      <P><b>Name:</b> {{ booking.name }}</P>
+      <p><b>Age:</b> {{ booking.age }}</p>
+      <p><b>Email:</b> {{ booking.email }}</p>
+      <p><b>Address:</b> {{ booking.address }}</p>
+      <p><b>Gender:</b> {{ booking.gender }}</p>
+      
+      <a href="/">Go back to home</a>
+    </div>
+
+    <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>Tutor Booking</h3>
+        <p>Find the best tutors and book your sessions easily.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/tutor">Tutors</a></li>
+          <li><a href="tutor">My Bookings</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contact Us</h3>
+        <p>Email: yoobee123@gmail.com</p>
+        <p>Phone: +64 023842632</p>
+        <p>Address: 123 Tutor Street, Auckland, New Zealand</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Tutor Booking. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
+
+ 
+      
