@@ -1,13 +1,14 @@
 Title: Online Tutor Booking System
+
 Description: A web-based application that allows tutors and students to connect online. It allows students to find tutors and book the sessions. Tutors can login to their dashboard and confirm or reject the booking requests.
 
 Technologies used:
-Python- backend logic
-Flask- web framework
-SQLite- database to store users and bookings
-WTForms- form validation
-HTML/CSS- fronted templates
-Jinja templates
+- Python- backend logic
+- Flask- web framework
+- SQLite- database to store users and bookings
+- WTForms- form validation
+- HTML/CSS- fronted templates
+- Jinja templates
 
 Features:
 - Student and tutor registration and login
