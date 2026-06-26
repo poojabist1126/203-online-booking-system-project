@@ -32,13 +32,13 @@ Uses SQLite, Database is created automatically when you run the app.
 
 Pages:
 
-   ** Pages                                  Url**
-       Home                                     /home
-       Tutors                                  /tutor
-       Book a session                          /booking/1
-       Confirmation                            /confirmation
-       Student Login                           /login-student
-       Tutor login                             /login-tutor
-       Student Register                       /register-student
-       Tutor Register                         /register-tutor
-       Tutor Dashboards                       /tutor-dashboard
+   ** Pages                                  
+       Home                                    
+       Tutors                                 
+       Book a session                          
+       Confirmation                          
+       Student Login                          
+       Tutor login                            
+       Student Register                       
+       Tutor Register                         
+       Tutor Dashboards                       
