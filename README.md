@@ -32,7 +32,7 @@ Uses SQLite, Database is created automatically when you run the app.
 
 Pages:
 
-   ** Pages                                  
+   ** Page                                  
        Home                                    
        Tutors                                 
        Book a session                          
